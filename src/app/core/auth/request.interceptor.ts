@@ -8,16 +8,16 @@ import { HttpHeaderResponse } from "@angular/common/http";
 import { HttpProgressEvent } from "@angular/common/http";
 import { HttpResponse } from "@angular/common/http";
 import { HttpUserEvent } from "@angular/common/http";
-import { TokenService } from '../token/token.service';
+import { TokenService } from "../token/token.service";
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
-
+    
     constructor(private tokenService: TokenService) {}
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent 
         | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
-
+       
             if(this.tokenService.hasToken()) {
                 const token = this.tokenService.getToken();
                 req = req.clone({
@@ -26,6 +26,6 @@ export class RequestInterceptor implements HttpInterceptor {
                     }
                 });
             }
-        return next.handle(req);
+            return next.handle(req);
     }
 }

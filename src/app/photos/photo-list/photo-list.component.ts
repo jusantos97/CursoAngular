@@ -24,11 +24,11 @@ constructor(
   private photoService: PhotoService
   ) { }
  
-ngOnInit(): void {
-
- this.userName = this.activatedRoute.snapshot.params.userName;
- this.photos = this.activatedRoute.snapshot.data['photos'];
- 
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.userName = params.userName;
+      this.photos = this.activatedRoute.snapshot.data['photos'];
+    });
   }
   
 
