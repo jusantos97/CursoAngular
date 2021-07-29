@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Photo } from '../photo/photo';
 import { PhotoService } from '../photo/photo.service';
+import { LoadingService } from '../../shared/loading/loading.service';
 
 
 @Component({

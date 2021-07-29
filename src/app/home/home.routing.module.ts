@@ -17,10 +17,16 @@ const routes: Routes = [
             { 
                 path: '',
                 component: SignInComponent,
+                data: {
+                    title: 'Sign in'
+                }
             }, 
             { 
                 path: 'signup',
                 component: SignUpComponent,
+                data: {
+                    title: 'Sign up'
+                }
             },            
         ]
     },              
